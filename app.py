@@ -22,7 +22,8 @@ CORS(app)
 def inicio():
     return jsonify({
         "Status":"API online e Funcionando Corretamente!",
-        "Autor":"Roger Silva"
+        "Autor":"Roger Silva",
+        "Escola":"Senai"
     })
 
 @app.route("/prever", methods=["POST"])
