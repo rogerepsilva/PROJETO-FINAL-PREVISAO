@@ -27,11 +27,22 @@ def inicio():
 
 @app.route("/prever", methods=["POST"])
 def retorno():
-    
-    return jsonify({
-        
-        
-    })
+    try:
+        dados = request.get_json()
+        carro = pd.DataFrame({
+            "ano":[dados["ano"]],
+            "quilometragem":[dados["quilometragem"]],
+            "motor":[dados["motor"]],
+            "num_revisoes":[dados["num_revisoes"]]
+        })
+        preco = modelo.predict(carro)[0]
+        return jsonify({
+            "Preço":round(float(preco),2)
+        })
+    except Exception as erro:
+        return jsonify({
+            "erro": str(erro)
+        }),400
 
 if __name__ == "__main__":
     app.run(port=8000, host="0.0.0.0", debug=True)
