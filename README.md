@@ -190,14 +190,10 @@ Abra o navegador e entre em:
 
 Preencha os campos solicitados, como:
 
-* Marca
-* Modelo
+* Motor
 * Ano
 * Quilometragem
-* Combustível
-* Câmbio
-* Potência
-* Demais características disponíveis
+* Número de Revisões
 
 ---
 
